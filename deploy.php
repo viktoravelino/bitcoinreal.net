@@ -25,8 +25,8 @@ EOT;
 
 $commands = array(
 	'echo $PWD',
-	'whoami',
-	'git pull',
+	//'whoami',
+	'git pull origin master',
 	'git status',
 	'git submodule sync',
 	'git submodule update',
@@ -40,7 +40,7 @@ $log = "####### ".date('Y-m-d H:i:s'). " #######\n";
 
 foreach($commands AS $command){
     // Run it
-    $tmp = shell_exec("$command 2>&1");
+    $tmp = shell_exec("$command");// 2>&1");
     // Output
     $output .= "<span style=\"color: #6BE234;\">\$</span> <span style=\"color: #729FCF;\">{$command}\n</span>";
     $output .= htmlentities(trim($tmp)) . "\n";
