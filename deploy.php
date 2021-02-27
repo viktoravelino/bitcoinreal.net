@@ -26,7 +26,7 @@ EOT;
 $commands = array(
 	//'echo $PWD',
 	//'whoami',
-	'git pull origin master',
+	'sudo git pull origin master',
 	//'git status',
 	//'git submodule sync',
 	//'git submodule update',
