@@ -24,9 +24,9 @@ EOT;
 // Check whether client is allowed to trigger an update
 
 $commands = array(
-	//'echo $PWD',
-	//'whoami',
-	'sudo git pull origin master',
+	'echo $PWD',
+	'bitnami',
+	'git pull origin master',
 	//'git status',
 	//'git submodule sync',
 	//'git submodule update',
