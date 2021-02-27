@@ -25,7 +25,7 @@ EOT;
 
 $commands = array(
 	'echo $PWD',
-	'bitnami',
+	'whoami',
 	'git pull origin master',
 	//'git status',
 	//'git submodule sync',
