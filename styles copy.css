@@ -1,0 +1,183 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: auto;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background: #f7f7f7;
+  font: 62.5% Verdana;
+  text-align: center;
+  padding-top: 20%;
+}
+
+h1 {
+  background: transparent
+    url(https://logospng.org/download/bitcoin/logo-bitcoin-2048.png) no-repeat
+    center center;
+  background-size: 122px;
+  height: 122px;
+  margin-right: auto;
+  text-indent: -9999px;
+}
+
+#cotacao {
+  color: #00a6ff;
+  font-size: 2em;
+  letter-spacing: 0.05em;
+  word-spacing: -0.3em;
+  margin: 0.7em 0.9em 0.5em 0.9em;
+}
+
+#cotacao .optional {
+  font-size: 2em;
+}
+
+#cotacao .clearfix {
+  clear: both;
+  height: 0;
+}
+
+.cotMoeda {
+  color: #aeaeae;
+  font-size: 3em;
+  margin: 0 0.1em;
+  padding: 0 0.07em 0.03em;
+}
+
+.cotMoeda:first-child {
+  margin: 0.1em;
+}
+
+.cotMoeda input {
+  outline: 0;
+}
+
+.cotMoeda .symbol {
+  display: inline-block;
+  width: 2.1em;
+}
+
+input#bitcoin,
+input#nacional {
+  border: 0;
+  color: #909090;
+  font-family: verdana;
+  font-size: 1em;
+  margin-left: 0.1em;
+  text-align: right;
+  width: 2.3em;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background: transparent;
+}
+
+body.mobile #cotacao .optional {
+  display: none;
+}
+
+body.mobile #cotacao {
+  display: flex;
+  flex-direction: column;
+  font-size: 1em;
+}
+
+/* CONTEUDO */
+
+#conteudo {
+  font-size: 1.2em;
+  margin: auto;
+  text-align: center;
+}
+
+#conteudo,
+#conteudo a {
+  color: #5a5a5a;
+}
+
+#conteudo h2 {
+  font-size: 1.3em;
+}
+
+#conteudo h2,
+#conteudo strong {
+  color: #616161;
+}
+
+#conteudo h2:first-of-type {
+  margin-top: 20px;
+}
+
+#conteudo h2:not(:first-of-type) {
+  margin-top: 50px;
+}
+
+#conteudo p {
+  line-height: 21px;
+  margin: 16px 0;
+}
+
+ul.menu {
+  list-style-type: none;
+  margin-left: initial;
+  text-align: left;
+}
+
+ul.menu > li {
+  border-bottom: 1px solid #eee;
+  margin-top: initial;
+  padding: 13px 0 8px 0;
+}
+
+#conteudo ul.menu > li {
+  margin-left: initial;
+}
+
+body.desktop #conteudo {
+  max-width: 550px;
+}
+
+body.desktop #conteudo ul.menu > li {
+  padding-bottom: 10px;
+}
+
+table.conversao {
+  border-collapse: collapse;
+  margin-bottom: 10px;
+  margin-top: 16px;
+  width: 100%;
+}
+
+thead tr td {
+  background: #4caf50;
+  color: #fff;
+  vertical-align: bottom;
+}
+
+table.conversao.bitcoin thead tr td,
+table.conversao.nem thead tr td {
+  background: #fef0db;
+  color: #999;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+td {
+  border-bottom: 1px solid #ddd;
+  font-size: 15px;
+  height: auto;
+  max-height: 30px;
+  padding: 10px;
+}

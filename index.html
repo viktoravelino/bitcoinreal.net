@@ -1,349 +1,339 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-	<link rel="stylesheet" href="styles.css" />
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="author" content="ViktorAvelino" />
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="author" content="ViktorAvelino" />
 
-	<title>Bitcoin Valor Hoje: Cotação Bitcoin</title>
+    <meta
+      name="description"
+      content="Bitcoin Real Valor Hoje. Valor da cotação do bitcoin em real e dólar hoje. Preço sempre atualizado. Valor do bitcoin hoje. Quanto o bitcoin vale hoje."
+    />
+    <meta
+      name="keywords"
+      content="bitcoin hoje, cotação do bitcoin hoje,preço do bitcoin hoje,valor do bitcoin hoje,cotação, bitcoin, custo bitcoin hoje, bitcoin, real, dolar, hoje, bitcoin price, bitcoin cost"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Bitcoin Hoje" />
+    <meta property="og:title" content="Bitcoin Hoje" />
+    <meta property="og:url" content="https://bitcoinreal.net/" />
+    <meta
+      property="og:description"
+      content="Bitcoin Real Valor Hoje. Valor da cotação do bitcoin em real e dólar hoje. Preço sempre atualizado. Valor do bitcoin hoje. Quanto o bitcoin vale hoje."
+    />
+    <link rel="canonical" href="https://bitcoinreal.net/" />
 
-	<!-- <link rel="icon" type="image/x-icon" href="https://dolarhoje.com/img/favicon.ico"> -->
+    <link rel="stylesheet" href="styles.css" />
 
-	<meta name="apple-mobile-web-app-title" content="BitcoinValorHoje" />
-	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<!-- <link rel="apple-touch-icon-precomposed" href="https://dolarhoje.com/img/apple-dolar.png"> -->
-	<!-- <link rel="icon" sizes="192x192" href="https://dolarhoje.com/img/touch-dolar.png"> -->
-	<meta name="theme-color" content="#fff" />
-	<meta name="msapplication-navbutton-color" content="#fff" />
-	<meta name="apple-mobile-web-app-status-bar-style" content="#fff" />
+    <title>Bitcoin Valor Hoje: Cotação Bitcoin</title>
+  </head>
 
-	<meta name="description"
-		content="Bitcoin Valor Hoje. Valor da cotação do bitcoin em real e dólar hoje. Preço sempre atualizado!" />
-	<meta name="keywords"
-		content="bitcoin hoje, cotação do bitcoin hoje,preço do bitcoin hoje,valor do bitcoin hoje,cotação, bitcoin, custo bitcoin hoje" />
+  <body>
+    <div class="btcContainer">
+      <img src="./img/bitcoinImg.png" alt="bitcoinImg" />
+      <div class="btcConversion">
+        <div class="prices">
+          <strong id="burrencyBTC">₿</strong>
+          <input
+            id="inputBTC"
+            type="text"
+            value="1,00"
+            oninput="onBtcInputHandler()"
+          />
+        </div>
+        <span>=</span>
+        <div class="prices">
+          <strong id="currencyBRL">R$</strong>
+          <input
+            id="inputBRL"
+            type="text"
+            value="Loading..."
+            oninput="onBrlInputHandler()"
+          />
+        </div>
+      </div>
+    </div>
 
-	<meta property="og:type" content="website" />
+    <!-- Content -->
+    <div class="content">
+      <h3>Preço das principais corretoras</h3>
+      <table class="priceTable">
+        <thead>
+          <tr>
+            <td>Exchange</td>
+            <td>Price</td>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <!-- End of the Table -->
+      <h3>O Bitcoin</h3>
+      <p>
+        Bitcoin usa a tecnologia ponto-a-ponto para operar sem a necessidade de
+        uma autoridade central ou banco; as transações com bitcoins são
+        gerenciadas coletivamente pelos usuários da rede.O Bitcoin é código
+        aberto, seu design é público, ninguém é proprietário ou controla o
+        Bitcoin e qualquer um pode participar. Através das suas várias e únicas
+        características, a rede Bitcoin permite usos interessantes indisponíveis
+        nos sistemas de pagamento anteriores.
+        <small>Fonte: bitcoin.org</small>
+      </p>
+      <h3>Blockchain</h3>
+      <p>
+        A blockchain é um livro de registro de contabilidade público
+        compartilhado no qual toda a rede Bitcoin confia. Todas transações
+        confirmadas são incluídas na cadeia de blocos. Desta forma, as carteiras
+        de Bitcoin podem calcular seu saldo disponível e novas transações podem
+        ser verificadas para que se possa usar bitcoins que são realmente de
+        propriedade de quem está gastando. A integridade e ordem cronológica da
+        cadeia de blocos são protegidas por criptografia.
+        <small>Fonte: bitcoin.org</small>
+      </p>
+      <h3>Transações</h3>
+      <p>
+        Uma transação é uma transferência de valor entre carteiras Bitcoin que é
+        incluída na block chain. Carteiras Bitcoin mantém uma informação secreta
+        chamada chave privada ou semente, que é usada para assinar transações,
+        fornecendo uma prova matemática provando que elas vieram do dono da
+        carteira. A assinatura também previne que a transação seja alterada por
+        qualquer um depois de emitida. Todas as transações são divulgadas entre
+        os usuários e normalmente começam a ser confirmadas pela rede nos
+        próximos 10 minutos, através de um processo chamado mineração.
+        <small>Fonte: bitcoin.org</small>
+      </p>
+      <table id="priceQtyTable">
+        <thead>
+          <tr>
+            <td>Quantidade</td>
+            <td>Price</td>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <h3>Acessibilidade</h3>
+      <p>
+        Com Bitcoin, todos os pagamentos do mundo podem ser totalmente
+        interoperacionais. Bitcoin permite a qualquer banco, empresa ou
+        indivíduo enviar pagamentos seguros a qualquer lugar do mundo a qualquer
+        momento, com ou sem uma conta bancária. Bitcoin está disponível em um
+        grande número de países que ainda hoje se encontram fora de um sistema
+        de pagamentos devido a suas próprias limitações. Bitcoin aumenta o
+        acesso global ao comércio e pode ajudar comércios internacionais a
+        florescer. <small>Fonte: bitcoin.org</small>
+      </p>
+      <h3>Como utilizar</h3>
+      <p>
+        <!-- <strong> Veja como usar o bitcoin:</strong> <br /> -->
+        <a href="https://bitcoin.org/pt_BR/voce-precisa-saber">- Informe-se</a
+        ><br />
+        Bitcoin é diferente do que você costuma usar no dia a dia. Antes de
+        começar no mundo Bitcoin, é recomendável conhecer alguns detalhes e
+        assim evitar eventuais problemas.
+      </p>
 
-	<meta property="og:site_name" content="Bitcoin Hoje" />
-	<meta property="og:title" content="Bitcoin Hoje" />
-	<meta property="og:url" content="http://bitcoinreal.net/" />
-	<!-- <meta property="og:image" content="https://dolarhoje.com/img/fb-icon.gif"> -->
-	<meta property="og:description"
-		content="Bitcoin Valor Hoje. Valor da cotação do bitcoin em real e dólar hoje. Preço sempre atualizado!" />
+      <p>
+        <a href="https://bitcoin.org/pt_BR/escolha-sua-carteira"
+          >- Escolha sua carteira</a
+        ><br />
+        Carteiras de bitcoin grátis estão disponíveis para todos os maiores
+        sistemas operacionais e dispositivos para atender uma variedade das suas
+        necessidades. Por exemplo, você pode instalar um aplicativo no seu
+        dispositivo móvel para uso cotidiano ou você pode ter uma carteira
+        apenas para pagamentos online no seu computador. Em qualquer caso,
+        escolher uma carteira é fácil e pode ser feito em questão de minutos.
+      </p>
+      <p>
+        <a href="https://bitcoin.org/pt_BR/compre">- Conseguir Bitcoin</a><br />
+        Você pode conseguir Bitcoin aceitando ele como um pagamento para
+        serviços e regalias. Existem também várias formas de você comprar
+        Bitcoin.
+      </p>
+      <p>
+        <a href="https://bitcoin.org/pt_BR/gastar-bitcoin">- Gastar Bitcoin</a
+        ><br />
+        Existe um número crescente de serviços e comércios aceitando Bitcoin por
+        todo o mundo. Use o Bitcoin para pagar por eles e conte sobre sua
+        experiência para ajudar eles a ganhar mais visibilidade.
+      </p>
+      <h3>Como aceitar o Bitcoin</h3>
+      <p>
+        <a href="https://bitcoin.org/pt_BR/voce-precisa-saber">- Informe-se</a
+        ><br />
+        Bitcoin não exigue que comerciantes mudem seus hábitos. No entanto,
+        Bitcoin é diferente do que você conhece e usa diariamente. Antes de
+        começar a usar o Bitcoin, existem algumas coisas que você precisa saber,
+        a fim de usá-lo de forma segura e evitar armadilhas comuns.
+      </p>
+      <p>
+        <a
+          href="https://en.bitcoin.it/wiki/How_to_accept_Bitcoin,_for_small_businesses#Merchant_Services"
+          >- Processando pagamentos</a
+        ><br />
+        Você pode processar os pagamentos e facturas por si mesmo ou você pode
+        usar serviços de comércio e depositar dinheiro na sua moeda local ou
+        bitcoins. A maioria dos pontos de vendas de empresas usam um tablet ou
+        um telefone celular para permitir que os clientes paguem com os seus
+        celulares.
+      </p>
+      <p>
+        <a href="https://en.bitcoin.it/wiki/Tax_compliance"
+          >- Contabilidade e impostos</a
+        ><br />
+        Comerciantes geralmente usam e exibem os preços na moeda local. O
+        Bitcoin funciona de forma semelhante a uma moeda estrangeira. Para
+        orientações sobre como proceder em relação as obrigações fiscais, é
+        aconselhável procurar um contador qualificado.
+      </p>
+      <p>
+        <a href="https://bitcoin.org/pt_BR/gastar-bitcoin"
+          >- Ganhar visibilidade</a
+        ><br />
+        Há um número crescente de usuários buscando lugares para gastar
+        bitcoins. Divulgue sua empresa em sites especializados para ajudar as
+        pessoas a encontrá-la. Você também pode usar o logo Bitcoin no seu site.
+      </p>
+      <p id="por">por Viktor Avelino</p>
+    </div>
+  </body>
 
-	<!-- <meta property="twitter:site" content="@dolarhoje"> -->
+  <script>
+    var isMobile =
+      (navigator.userAgent || navigator.vendor)
+        .toLowerCase()
+        .indexOf("mobile") > -1;
+    if (isMobile) {
+      document.querySelector("body").classList.add("mobile");
+      // document.querySelector(".btcContainer").classList.add("mobile");
+    }
 
-	<link rel="canonical" href="http://bitcoinreal.net/" />
+    function renderTable(exchangeArray) {
+      const priceTableElement = document.querySelector(".priceTable");
+      for (exchange in exchangeArray) {
+        const trElement = document.createElement("tr");
+        const tdNameElement = document.createElement("td");
+        const tdPriceElement = document.createElement("td");
+        tdNameElement.innerText = exchangeArray[exchange].name;
+        tdPriceElement.innerText =
+          "R$ " + exchangeArray[exchange].price.replace(".", ",");
+        trElement.appendChild(tdNameElement);
+        trElement.appendChild(tdPriceElement);
+        priceTableElement.children[1].appendChild(trElement);
+      }
+    }
 
-	<!-- <link rel="alternate" type="application/rss+xml" title="Dólar Hoje RSS Feed" href="https://dolarhoje.com/feed.xml"> -->
-	<!-- <script
-			data-ad-client="ca-pub-6025960330100507"
-			async
-			src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-		></script> -->
-	<script data-ad-client="ca-pub-6025960330100507" async
-		src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-</head>
+    function renderPriceQtyTable(conversionFee) {
+      const array = [1, 2, 5, 10];
+      const priceQtyTable = document.querySelector("#priceQtyTable");
+      for (qty in array) {
+        const trElement = document.createElement("tr");
+        const tdQtyElement = document.createElement("td");
+        const tdCostElement = document.createElement("td");
+        tdQtyElement.innerText = array[qty] + " Bitcoins";
+        tdCostElement.innerText =
+          "R$ " + (array[qty] * conversionFee).toFixed(2).replace(".", ",");
+        trElement.appendChild(tdQtyElement);
+        trElement.appendChild(tdCostElement);
+        priceQtyTable.children[1].appendChild(trElement);
+      }
+    }
 
-<body>
-	<div id="moeda">
-		<h1>Dolar Hoje</h1>
-		<!-- <img src="https://logospng.org/download/bitcoin/logo-bitcoin-2048.png" width="150px" alt="Bitcoin" /> -->
-	</div>
+    async function getExchangePrices() {
+      var exchangeArray = [];
+      // Biscoint
+      const responseBiscoint = await fetch(
+        "https://api.biscoint.io/v1/ticker?base=BTC&quote=BRL"
+      );
+      const jsonBiscoint = await responseBiscoint.json();
+      exchangeArray.push({
+        name: "Biscoint",
+        price: parseFloat(jsonBiscoint.data.last).toFixed(2),
+      });
 
-	<div id="cotacao">
-		<span class="cotMoeda bitcoin">
-			<span class="symbol">₿</span>
-			<input type="text" id="bitcoin" value="1,00" style="width: 2.3em" onchange="{updateNacionalInput()}" />
-		</span>
-		<span class="optional">=</span>
-		<span class="cotMoeda nacional">
-			<span class="symbol">R$</span>
-			<text type="text" id="nacional">0</text>
-		</span>
-		<!-- <span class=" optional">hoje</span> -->
-		<!-- <br class="clearfix"> -->
-	</div>
+      // Braziliex
+      const responseBraziliex = await fetch(
+        "https://braziliex.com/api/v1/public/ticker/btc_brl"
+      );
+      const jsonBraziliex = await responseBraziliex.json();
+      exchangeArray.push({
+        name: "Braziliex",
+        price: parseFloat(jsonBraziliex.last).toFixed(2),
+      });
 
-	<div id="conteudo">
-		<h2>Principais Preços</h2>
-		<table class="conversao bitcoin">
-			<thead>
-				<tr>
-					<td>Exchange</td>
-					<td>Cotação</td>
-				</tr>
-			<tbody id="tbody">
+      // Bitpreco
+      const responseBitpreco = await fetch(
+        "https://api.bitpreco.com/btc-brl/ticker"
+      );
+      const jsonBitpreco = await responseBitpreco.json();
+      exchangeArray.push({
+        name: "Bitpreço",
+        price: parseFloat(jsonBitpreco.last).toFixed(2),
+      });
 
-			</tbody>
-			</thead>
-		</table>
+      // PagCripto
+      const responsePagcripto = await fetch(
+        "https://api.pagcripto.com.br/v2/public/ticker/BTCBRL"
+      );
+      const jsonPagcripto = await responsePagcripto.json();
+      exchangeArray.push({
+        name: "Pagcripto",
+        price: parseFloat(jsonPagcripto.data.last).toFixed(2),
+      });
 
-		</ul>
-		<h2>O Bitcoin</h2>
-		<p>
-			É uma criptomoeda e sistema de pagamento online baseado em um protocolo de código aberto e é
-			independente de qualquer autoridade central. Um Bitcoin pode ser transferido por
-			computadores e smartphones sem recurso a uma instituição financeira intermediária.
-		</p>
+      // MercadoBitcoin
+      const responseMercadoBitcoin = await fetch(
+        "https://www.mercadobitcoin.net/api/BTC/ticker/"
+      );
+      const jsonMercadoBitcoin = await responseMercadoBitcoin.json();
+      let price = parseFloat(jsonMercadoBitcoin.ticker.last).toFixed(2);
+      exchangeArray.push({
+        name: "MercadoBitcoin",
+        price,
+      });
+      return exchangeArray;
+    }
 
-		<h2>Como funciona a cotação do Bitcoin hoje?</h2>
-		<p>
-			O <strong>valor</strong> do Bitcoin é determinado pela oferta e procura. Ele possui uma
-			quantidade limitada a ser produzida. Quanto maior a procura pelo Bitcoin, maior sua cotação.
-			Ele tem sido bastante comprado como forma de diversificar seus investimentos, compras
-			internacionais e transferências.
-		</p>
+    var conversionFee = 0;
+    const inputBrlElement = document.getElementById("inputBRL");
+    const inputBtcElement = document.getElementById("inputBTC");
 
-		<h2>Como o Bitcoin funciona?</h2>
-		<p>
-			A partir do momento que você compra Bitcoins e os armazena em sua carteira virtual, pode
-			transferir para a carteira de outra pessoa, empresa ou loja. Essa transferência é feita
-			através da tecnologia Blockchain, uma estrutura de dados que representa a contabilidade
-			financeira ou registro de transações. Casa transação é assinada digitalmente para garantir
-			autenticidade e que não haja adulterações.
-		</p>
+    function onBtcInputHandler() {
+      const notEmpty = inputBtcElement.value.replace(",", ".") > 0;
+      if (notEmpty) {
+        inputBrlElement.value = (
+          parseFloat(inputBtcElement.value.replace(",", ".")) * conversionFee
+        )
+          .toFixed(2)
+          .replace(".", ",");
+      } else {
+        inputBrlElement.value = 0;
+      }
+    }
+    function onBrlInputHandler() {
+      const notEmpty = inputBrlElement.value.replace(",", ".") > 0;
+      // console.log(empty);
+      if (notEmpty) {
+        inputBtcElement.value = (
+          parseFloat(inputBrlElement.value.replace(",", ".")) / conversionFee
+        )
+          .toFixed(8)
+          .replace(".", ",");
+      } else {
+        inputBtcElement.value = 0;
+      }
+    }
 
-		<h2>Por que comprar Bitcoin?</h2>
-		<p>Existem várias vantagens em utilizar Bitcoins, como por exemplo:</p>
+    async function main() {
+      const exchangeArray = await getExchangePrices();
+      renderTable(exchangeArray);
+      conversionFee = exchangeArray[0].price;
 
-		<p>
-			<strong>Poder transferir qualquer quantidade de dinheiro para qualquer lugar do mundo a qualquer
-				hora.</strong>
-			Para isso, paga-se uma taxa a sua escolha aos mineradores que priorizarão a transferência de
-			acordo com o valor da taxa. Pagando-se mais a transferência pode ser feita em poucos
-			minutos, pagando-se menos pode demorar algumas horas. A confirmação da transferência pode
-			ser acompanhada online.
-		</p>
+      inputBrlElement.value = conversionFee.replace(".", ",");
+      renderPriceQtyTable(conversionFee);
+    }
 
-		<p>
-			<strong> Segurança de informação.</strong> Sua carteira virtual fora das exchanges não
-			possui nenhuma informação pessoal, o que garante certo anonimato. Só é possível rastrear de
-			que carteira veio os Bitcoins e quantos são, mas não quem a possui.
-		</p>
-
-		<p>
-			<strong>Transparência de informações.</strong> As informações de transferências são
-			públicas. Tanto a quantidade de Bitcoins transferidos quanto qual carteira transferiu para
-			qual carteira. Não é possível manipular essas informações devido a seu forte algoritmo de
-			criptografia.
-		</p>
-
-		<p>
-			<strong> Isenção de taxas a instituições.</strong> A partir do momento que você possui uma
-			paper ou hardware wallet, ou seja seus Bitcoins não estão mais na exchange, você não paga
-			mais taxas além da taxa de transferência aos mineradores que é escolhida a seu gosto.
-		</p>
-
-		<p>
-			<strong> Possibilidade de crescimento.</strong> O Bitcoin está crescendo enormemente, assim
-			como as inúmeras altcoins, moedas virtuais alternativas. É uma boa opção de investimento
-			tanto para guardar e esperar crescer como realizar day trade, operações de curto prazo de
-			compra e venda ou venda e compra com o objetivo de ganhar na variação de preço de forma
-			rápida com as oscilações, de criptomoedas. A vantagem sobre o day trade de ações é que pode
-			ser feita a qualquer hora do dia.
-		</p>
-
-		<h2>Como comprar Bitcoins?</h2>
-		<p>
-			Para comprar Bitcoins, cadastre-se em uma casa de câmbio virtual (exchange), faça uma
-			transferência bancária para a empresa e compre seus Bitcoins online pelo site da casa de
-			câmbio. É possível comprar um Bitcoin inteiro ou uma fração da moeda (por exemplo: 0,541
-			Bitcoins).
-		</p>
-
-		<p>
-			Recomendamos que não deixe seus Bitcoins em exchanges, pois elas são sempre alvos de
-			crackers. Estude como criar uma paper wallet ou compre uma carteira hardware como a Ledger
-			Nano S.
-		</p>
-
-		<p>
-			Também é possível fazer compras P2P (comprar de outra pessoa). Recomendamos que peça
-			referências do vendedor antes de comprar seus Bitcoins e outras moedas.
-		</p>
-
-		<h2>Como vender Bitcoins?</h2>
-		<p>
-			Uma das formas é trocar seus Bitcoins por real através de exchanges e pedir para que ela
-			transfira para sua conta bancária.
-		</p>
-
-		<p>
-			Também é possível vender P2P (para outra pessoa) e ela transferirá para sua conta bancária
-			ou pagará boletos para você. Lembre-se de pedir referências para o vendedor. A maioria
-			possui páginas no Facebook ou posts em grupos com depoimentos de quem já fez negócios com
-			eles.
-		</p>
-
-		<!-- <ul class="menu">
-            <li><a href="https://www.facebook.com/DolarHoje" target="_blank" rel="nofollow noopener">Curta no
-                    Facebook</a>
-            </li>
-            <li><a href="https://twitter.com/DolarHoje" target="_blank" rel="nofollow noopener">Siga no Twitter</a></li>
-        </ul>
-
-        <ul class="menu">
-            <li><a href="https://feedburner.google.com/fb/a/mailverify?uri=dolarhojepontocom&amp;loc=pt_BR"
-                    target="_blank" rel="nofollow noopener">Receber cotações via email</a></li>
-            <li><a href="https://dolarhoje.com/telegram/" rel="nofollow noopener" target="_blank">Receber no
-                    Telegram</a></li>
-        </ul>
-
-        <ul class="menu">
-            <li><a href="https://dolarhoje.com/descontos/">Descontos em viagens</a></li>
-            <li><a href="https://dolarhoje.com/em-seu-site/">Coloque as cotações em seu site</a></li>
-        </ul>
-
-        <ul class="menu">
-            <li>
-                <a href="mailto:eu@pedromenezes.com?subject=DolarHoje">contato</a>
-            </li>
-
-            <li>
-                <a href="https://dolarhoje.com/politicas/" rel="nofollow">políticas de privacidade e
-                    responsabilidade</a>
-            </li>
-        </ul> -->
-
-		<ul class="menu">
-			<li>por <em>Viktor Avelino</em></li>
-		</ul>
-	</div>
-</body>
-
-<script>
-
-	const bitcoinInputEl = document.querySelector("#bitcoin");
-	const nacionalInputEl = document.querySelector("#nacional");
-	const pricesTbodyEl = document.querySelector("#tbody")
-
-	//Checar se é mobile
-	const isMobile = (navigator.userAgent || navigator.vendor).toLowerCase().indexOf("mobile") > -1;
-
-	if (isMobile) {
-		document.body.className = "mobile";
-	} else {
-		document.body.className = "desktop";
-	}
-
-	if (isMobile) {
-		document.getElementById("cotacao").scrollIntoView();
-	}
-	//--------------------
-
-	// var taxaConversao = 200000.00;
-
-	function updateNacionalInput(taxaConversao) {
-		var valor = parseFloat(bitcoinInputEl.value.replace(",", ".")) * taxaConversao;
-		nacionalInputEl.innerHTML = valor.toFixed(2).replace(".", ",");
-		// nacionalInputEl.innerHTML = valor.toFixed(2).replace(".", ",")
-	}
-	// updateNacionalInput(200000.00);
-
-	function updatePricesTable(prices) {
-
-		const exchanges = ["Braziliex", "BitPreço", "PagCripto", "Mercado Bitcoin", "Biscoint"];
-
-		const braziliexTrEl = document.createElement("tr")
-		const bitprecoTrEl = document.createElement("tr")
-		const pagcriptoTrEl = document.createElement("tr")
-		const mercadoTrEl = document.createElement("tr")
-		const biscointTrEl = document.createElement("tr")
-
-		const braziliexTdEl = document.createElement("td")
-		const bitprecoTdEl = document.createElement("td")
-		const pagcriptoTdEl = document.createElement("td")
-		const mercadoTdEl = document.createElement("td")
-		const biscointTdEl = document.createElement("td")
-
-		const braziliexNameTextEl = document.createTextNode(exchanges[0])
-		const bitprecoNameTextEl = document.createTextNode(exchanges[1])
-		const pagcriptoNameTextEl = document.createTextNode(exchanges[2])
-		const mercadoNameTextEl = document.createTextNode(exchanges[3])
-		const biscointNameTextEl = document.createTextNode(exchanges[4])
-		braziliexTdEl.appendChild(braziliexNameTextEl)
-		bitprecoTdEl.appendChild(bitprecoNameTextEl)
-		pagcriptoTdEl.appendChild(pagcriptoNameTextEl)
-		mercadoTdEl.appendChild(mercadoNameTextEl)
-		biscointTdEl.appendChild(biscointNameTextEl)
-
-		const braziliexPriceTdEl = document.createElement("td")
-		const bitprecoPriceTdEl = document.createElement("td")
-		const pagcriptoPriceTdEl = document.createElement("td")
-		const mercadoPriceTdEl = document.createElement("td")
-		const biscointPriceTdEl = document.createElement("td")
-
-		const braziliexPriceTextEl = document.createTextNode(prices.braziliexPrice.toFixed(2))
-		const bitprecoPriceTextEl = document.createTextNode(prices.bitprecoPrice.toFixed(2))
-		const pagcriptoPriceTextEl = document.createTextNode(prices.pagCriptoPrice.toFixed(2))
-		const mercadoPriceTextEl = document.createTextNode(prices.mercadoBitcoinPrice.toFixed(2))
-		const biscointPriceTextEl = document.createTextNode(prices.biscointPrice.toFixed(2))
-		braziliexPriceTdEl.appendChild(braziliexPriceTextEl)
-		bitprecoPriceTdEl.appendChild(bitprecoPriceTextEl)
-		pagcriptoPriceTdEl.appendChild(pagcriptoPriceTextEl)
-		mercadoPriceTdEl.appendChild(mercadoPriceTextEl)
-		biscointPriceTdEl.appendChild(biscointPriceTextEl)
-
-		braziliexTrEl.appendChild(braziliexTdEl)
-		braziliexTrEl.appendChild(braziliexPriceTdEl)
-		bitprecoTrEl.appendChild(bitprecoTdEl)
-		bitprecoTrEl.appendChild(bitprecoPriceTdEl)
-		pagcriptoTrEl.appendChild(pagcriptoTdEl)
-		pagcriptoTrEl.appendChild(pagcriptoPriceTdEl)
-		mercadoTrEl.appendChild(mercadoTdEl)
-		mercadoTrEl.appendChild(mercadoPriceTdEl)
-		biscointTrEl.appendChild(biscointTdEl)
-		biscointTrEl.appendChild(biscointPriceTdEl)
-
-		pricesTbodyEl.appendChild(braziliexTrEl)
-		pricesTbodyEl.appendChild(bitprecoTrEl)
-		pricesTbodyEl.appendChild(pagcriptoTrEl)
-		pricesTbodyEl.appendChild(mercadoTrEl)
-		pricesTbodyEl.appendChild(biscointTrEl)
-	}
-
-	async function getBitcoinPrices() {
-		var biscoint = await fetch("https://api.biscoint.io/v1/ticker?base=BTC&quote=BRL");
-		biscoint = await biscoint.json();
-		const biscointPrice = parseFloat(biscoint.data.last);
-
-		updateNacionalInput(biscointPrice);
-
-		var braziliex = await fetch("https://braziliex.com/api/v1/public/ticker/btc_brl");
-		braziliex = await braziliex.json();
-		const braziliexPrice = parseFloat(braziliex.last);
-
-		var bitpreco = await fetch("https://api.bitpreco.com/btc-brl/ticker");
-		bitpreco = await bitpreco.json();
-		const bitprecoPrice = parseFloat(bitpreco.last);
-
-		var pagCripto = await fetch("https://api.pagcripto.com.br/v2/public/ticker/BTCBRL");
-		pagCripto = await pagCripto.json();
-		const pagCriptoPrice = parseFloat(pagCripto.data.last);
-
-		var mercadoBitcoin = await fetch("https://www.mercadobitcoin.net/api/BTC/ticker/");
-		mercadoBitcoin = await mercadoBitcoin.json();
-		const mercadoBitcoinPrice = parseFloat(mercadoBitcoin.ticker.last);
-
-		const prices = {
-			braziliexPrice,
-			bitprecoPrice,
-			pagCriptoPrice,
-			mercadoBitcoinPrice,
-			biscointPrice,
-		};
-		return prices
-	}
-
-	async function mainProcess() {
-		const prices = await getBitcoinPrices()
-		await updatePricesTable(prices)
-	}
-	mainProcess();
-</script>
-
+    main();
+  </script>
 </html>
