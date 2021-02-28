@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt_BR">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -47,6 +47,9 @@
   </head>
 
   <body>
+    <span id="translate"> Translate the website: </span>
+    <div id="google_translate_element"></div>
+
     <div class="btcContainer">
       <img src="./img/bitcoinImg.png" alt="bitcoinImg" />
       <div class="btcConversion">
@@ -212,6 +215,17 @@
       </p>
       <p id="por">por Viktor Avelino</p>
     </div>
+
+    <!-- <div id="google_translate_element"></div> -->
+    <script>
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          { pageLanguage: "pt_br" },
+          "google_translate_element"
+        );
+      }
+    </script>
+    <script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   </body>
 
   <script type="text/javascript" src="script.js"></script>
