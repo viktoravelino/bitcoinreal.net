@@ -154,10 +154,16 @@ input {
   color: #6495ed;
 }
 
-#por {
+footer {
   font-style: italic;
   font-size: 0.8rem;
-  align-self: flex-end;
+  /* align-self: flex-end; */
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 @media (max-width: 800px) {
